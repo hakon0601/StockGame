@@ -49,8 +49,8 @@ def run_simulation(ticks, range_values):
         print("At: " + ticks[tick][0][0:5] + " Stock score is: " + mock_columbs[get_score(float(ticks[tick][1]), range_values) - 1])
 
 
-nr_of_range_values = 6
-mock_columbs = ["######", "############", "##################", "########################", "##############################", "####################################"]
+nr_of_range_values = 10
+mock_columbs = ["#", "##", "###", "####", "#####", "######","#######","########","#########","##########"]
 
 day_dict = initiate_dict()
 
