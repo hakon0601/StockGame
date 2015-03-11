@@ -1,7 +1,7 @@
 from random import choice
 
 def initiate_dict():
-    f = open("aapl.us.txt", 'r')
+    f = open(name + ".us.txt", 'r')
     lines = f.readlines()
     lines.pop(0)
     new_lines = []
@@ -49,24 +49,31 @@ def run_simulation(ticks, range_values):
         f.write(random_day + ", " + ticks[tick][0][0:5] + ", " + str(get_score(float(ticks[tick][1]), range_values) - 1) + "\n")
         print("At: " + ticks[tick][0][0:5] + " Stock score is: " + str(get_score(float(ticks[tick][1]), range_values) - 1))
 
+name = str(input("Ticker: "))
 
-f = open('aapl_out.txt','w')
+f = open(name + '_out.txt','w')
 
 nr_of_range_values = 100
 
 day_dict = initiate_dict()
 
-random_day =  choice(list(day_dict.keys()))
-print("Date: " + random_day)
+a = sorted(list(day_dict.keys()))
+
+for random_day in a:
 
 
-ticks = day_dict[random_day]
-min_max = get_min_max(ticks)
 
-range_values = set_ranges(nr_of_range_values, min_max)
+#random_day =  choice(list(day_dict.keys()))
+    print("Date: " + random_day)
 
-print(min_max)
-print(range_values)
 
-run_simulation(ticks, range_values)
+    ticks = day_dict[random_day]
+    min_max = get_min_max(ticks)
+
+    range_values = set_ranges(nr_of_range_values, min_max)
+
+    print(min_max)
+    print(range_values)
+
+    run_simulation(ticks, range_values)
 f.close() # you can omit in most cases as the destructor will call if
