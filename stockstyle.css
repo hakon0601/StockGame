@@ -1,0 +1,38 @@
+
+
+body{
+    text-align: center;
+}
+h1{
+    color: navy;
+    text-align: center;
+
+}
+
+
+canvas{
+    margin:0 auto;
+    position: absolute;
+    left: 0;
+    right:0;
+    border: 1px solid black;
+}
+button{
+    height:100%;
+    width:100%;
+    border-radius: 10px;
+}
+#startButton{
+
+    height:15%;
+    width: 15%;
+    margin:0 auto;
+    position: relative;
+    border-radius: 10px;
+}
+#layer1{
+    z-index:0;
+}
+#layer2{
+    z-index:-1;
+}

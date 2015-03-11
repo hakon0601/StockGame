@@ -1,18 +1,19 @@
+
 <?php
 
-    include("dbconfig.php");
-    $conn = mysql_connect($host, $user, $pswd);
-    mysql_select_db($db, $conn);
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 
+$servername='localhost';
+$username='capitalist';
+$password='capitalist';
+$dbname='stockpool';
 
-    //run the query to search for the username and password the match
-    $query = "SELECT * FROM `user`";
-    $result = mysql_query($query) or die("Unable to load data from database because : ".mysql_error());
+//create connection
+$conn =@mysql_connect ($servername,$username,$password);
 
+@mysql_select_db($dbname,$conn);
 
-    while ($row = mysql_fetch_assoc($result)) {
-    	echo nl2br($row['username']. "\n");
-    }
 
 
 ?>
